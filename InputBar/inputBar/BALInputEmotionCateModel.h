@@ -31,9 +31,10 @@
  */
 @interface BALInputEmotionModel : NSObject
 
-@property (nonatomic,strong)    NSString    *emoticonID;
+//@property (nonatomic,strong)    NSString    *emoticonID;
 @property (nonatomic,strong)    NSString    *showName;
 @property (nonatomic,strong)    NSString    *fileName;
+@property (nonatomic,assign)    BOOL    isEmoji;
 
 + (BALInputEmotionModel*)deleteEmotionModel;
 

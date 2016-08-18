@@ -143,4 +143,8 @@
  */
 //- (id<NIMCellLayoutConfig>)layoutConfigWithMessage:(NIMMessage *)message;
 
+- (NSInteger)chatInputViewOpenPhotoAlbumActionTag;
+- (NSInteger)chatInputViewOpenCameraActionTag;
+- (NSInteger)chatInputViewOpenLocationActionTag;
+
 @end

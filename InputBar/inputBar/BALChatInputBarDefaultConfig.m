@@ -32,4 +32,16 @@
     return 46.0;
 }
 
+- (NSInteger)chatInputViewOpenCameraActionTag {
+    return 1012;
+}
+
+- (NSInteger)chatInputViewOpenLocationActionTag {
+    return 1013;
+}
+
+- (NSInteger)chatInputViewOpenPhotoAlbumActionTag {
+    return 1011;
+}
+
 @end

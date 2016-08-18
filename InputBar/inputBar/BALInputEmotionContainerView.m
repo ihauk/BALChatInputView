@@ -101,10 +101,10 @@ static const NSInteger kBottomCateTabHeight = 40;
         
         [emotionDic[@"data"] enumerateObjectsUsingBlock:^(NSDictionary*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             BALInputEmotionModel *emotionModel = [[BALInputEmotionModel alloc] init];
-            emotionModel.emoticonID = obj[@"id"];
+            //emotionModel.emoticonID = obj[@"id"];
             emotionModel.fileName = [emotionPath stringByAppendingPathComponent:obj[@"file"]];
             emotionModel.showName = obj[@"tag"];
-            
+            emotionModel.isEmoji = emotionDic[@"info"][@"isEmoji"];
             [cateModel.emotionsArray addObject:emotionModel];
             
         }];

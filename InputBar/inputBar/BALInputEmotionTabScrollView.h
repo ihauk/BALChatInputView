@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BALInputEmotionCateModel.h"
 
+extern NSString* kInputEmotionSendButtonDidTouchedNotification;
+
 @class BALInputEmotionTabScrollView;
 
 @protocol BALInputEmotionTabScrollViewDelegate <NSObject>

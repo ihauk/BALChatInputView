@@ -67,9 +67,22 @@ typedef NS_ENUM(NSInteger, BALChatInputViewStatus) {
 
 - (void)chatInputView:(BALChatInputView*)inputView didSelectEmotionImage:(BALInputEmotionModel*)emotionImage;
 
-- (void)chatInputView:(BALChatInputView*)inputView didSelectPluginItem:(BALInputPluginItemModel*)pluginItem;
 
 - (void)chatInputView:(BALChatInputView*)inputView didSelectShortutText:(NSString*)shortcutText;
+
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectOpenPhotoAlbumPluginItem:(NSInteger)actionTag;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectOpenCameraPluginItem:(NSInteger)actionTag;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectOpenLocationPluginItem:(NSInteger)actionTag;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectCustomPluginItem:(NSInteger)actionTag;
+
+
+- (void)chatInputView:(BALChatInputView*)inputView didEndRecordAudio:(NSData*)audioData;
+
+- (void)chatInputView:(BALChatInputView*)inputView didCancleRecordAudio:(NSData*)audioData;
 
 @end
 

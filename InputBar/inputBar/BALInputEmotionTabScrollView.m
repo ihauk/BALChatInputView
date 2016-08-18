@@ -10,6 +10,8 @@
 #import "BALUtility.h"
 #import "BALChatInputDefine.h"
 
+NSString *kInputEmotionSendButtonDidTouchedNotification = @"kInputEmotionSendButtonDidTouchedNotification_BAL";
+
 static const NSInteger senderWidth = 60;
 
 @interface BALInputEmotionTabScrollView ()
@@ -49,6 +51,7 @@ static const NSInteger senderWidth = 60;
     [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
     [_sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_sendButton setBackgroundColor:BALInput_EmotionSendBtnBKCOLor];
+    [_sendButton addTarget:self action:@selector(senderBtnTouched:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:_emotioncateScrollView];
     [self addSubview:_sendButton];
@@ -103,6 +106,10 @@ static const NSInteger senderWidth = 60;
 
 #pragma mark -
 #pragma mark - action
+
+- (void)senderBtnTouched:(UIButton*)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kInputEmotionSendButtonDidTouchedNotification object:nil];
+}
 
 - (void)didBottomTabItemTouchedAction:(UIButton*)sender {
     NSInteger selectedIndex = [_tabViewArray indexOfObject:sender];

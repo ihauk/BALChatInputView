@@ -14,6 +14,7 @@
 #import "BALInputShortcutTextContainerView.h"
 #import "BALInputEmotionCateModel.h"
 #import "GmacsVoiceCaptureControl.h"
+#import "BALInputEmotionTabScrollView.h"
 
 
 @interface BALChatInputView ()<UITextViewDelegate,GmacsVoiceCaptureControlDelegate>
@@ -93,6 +94,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEmotionTouchedAction:) name:kInputEmotionDidTouchedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didPluginTouchedAction:) name:kInputPluginDidTouchedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didShortcutTextTouchedAction:) name:kInputShortcutTextDidTouchedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEmotionSenderButtonTouchedAction:) name:kInputEmotionSendButtonDidTouchedNotification object:nil];
     
 }
 
@@ -102,6 +104,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kInputEmotionDidTouchedNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kInputPluginDidTouchedNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kInputShortcutTextDidTouchedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kInputEmotionSendButtonDidTouchedNotification object:nil];
 }
 
 - (void)setupUIEvents {
@@ -227,18 +230,51 @@
 
 - (void)didEmotionTouchedAction:(NSNotification*)notification {
     BALInputEmotionModel *model = notification.object;
-    [self.inputToolBar.inputTextView insertText:model.showName];
-    NSLog(@"---%@",model.showName);
+    if (model.isEmoji) {
+        
+        [self.inputToolBar.inputTextView insertText:model.showName];
+    }else {
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didSelectEmotionImage:)]) {
+            [_delegate chatInputView:self didSelectEmotionImage:model];
+        }
+    }
+    
 }
 
 - (void)didPluginTouchedAction:(NSNotification*)notification {
     BALInputPluginItemModel *model = notification.object;
     NSLog(@"---%@---%@",model.title,model.actionTag);
+    NSInteger actionTag = model.actionTag.integerValue;
+    NSInteger photoTag = [_inputConfig chatInputViewOpenPhotoAlbumActionTag];
+    NSInteger cameraTag = [_inputConfig chatInputViewOpenCameraActionTag];
+    NSInteger locationTag = [_inputConfig chatInputViewOpenLocationActionTag];
+    
+    if (actionTag == photoTag) {
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didSelectOpenPhotoAlbumPluginItem:)]) {
+            [_delegate chatInputView:self didSelectOpenPhotoAlbumPluginItem:actionTag];
+        }
+    }else if (actionTag == cameraTag){
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didSelectOpenCameraPluginItem:)]) {
+            [_delegate chatInputView:self didSelectOpenPhotoAlbumPluginItem:actionTag];
+        }
+    }else if (actionTag == locationTag) {
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didSelectOpenLocationPluginItem:)]) {
+            [_delegate chatInputView:self didSelectOpenLocationPluginItem:actionTag];
+        }
+    }else{
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didSelectCustomPluginItem:)]) {
+            [_delegate chatInputView:self didSelectCustomPluginItem:actionTag];
+        }
+    }
 }
 
 - (void)didShortcutTextTouchedAction:(NSNotification*)notification {
+
     NSString *text = notification.object;
-    NSLog(@"---%@----",text);
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(chatInputView:didSelectShortutText:)]) {
+        [self.delegate chatInputView:self didSelectShortutText:text];
+    }
 }
 
 - (void)didKeyboardReturnKeyTouchedAction:(UITextView*)textView text:(NSString*)text {
@@ -264,6 +300,12 @@
     _inputToolBar.inputTextView.text = @"";
     [_inputToolBar.inputTextView layoutIfNeeded];
      [self inputTextViewToHeight:[self getTextViewContentH:_inputToolBar.inputTextView]];
+}
+
+- (void)didEmotionSenderButtonTouchedAction:(NSNotification*)nofitication {
+    NSString *text = _inputToolBar.inputTextView.text;
+    
+    [self didKeyboardReturnKeyTouchedAction:_inputToolBar.inputTextView text:text];
 }
 
 #pragma mark -
@@ -364,10 +406,9 @@
     NSData* recordData = [self.voiceCaptureControl stopRecord];
     if (self.voiceCaptureControl.duration >= 1.0f && nil != recordData) {
         
-//        NSData* amrData = [self changeAudioFormatFromWavToAMR:recordData];
-//        GmacsAudioMessage* voiceMessage = [GmacsAudioMessage messageWithAudio:amrData
-//                                                                     duration:self.voiceCaptureControl.duration];
-//        [self sendAudioMessage:voiceMessage refer:@"im"];
+        if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didEndRecordAudio:)]) {
+            [_delegate chatInputView:self didEndRecordAudio:recordData];
+        }
     }
 }
 
@@ -379,6 +420,10 @@
 - (void)onCancelRecordEvent
 {
     [self.voiceCaptureControl cancelRecord];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(chatInputView:didCancleRecordAudio:)]) {
+        [_delegate chatInputView:self didCancleRecordAudio:nil];
+    }
 }
 
 
