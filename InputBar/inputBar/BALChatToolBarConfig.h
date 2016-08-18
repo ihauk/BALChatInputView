@@ -23,6 +23,8 @@
 
 - (CGFloat)bottomInputViewHeight;
 
+- (CGFloat)topToolbarInputViewHeight;
+
 /**
  *  可以显示在点击输入框“+”按钮之后的多媒体按钮
  */

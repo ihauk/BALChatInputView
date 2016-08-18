@@ -13,6 +13,8 @@
 
 @protocol BALShortcutTextListViewDelegate;
 
+extern NSString *kInputShortcutTextDidTouchedNotification;
+
 /**
  *  GmacsMultiTextBoardView,安居客经纪人 快捷文本发送视图
  */

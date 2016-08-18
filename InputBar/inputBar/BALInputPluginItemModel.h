@@ -11,6 +11,7 @@
 
 @interface BALInputPluginItemModel : NSObject
 
+@property(nonatomic,strong) NSNumber *actionTag;
 @property(nonatomic,strong) UIImage *image;
 @property(nonatomic,strong) UIImage *highlightImage;
 @property(nonatomic,strong) NSString *title;

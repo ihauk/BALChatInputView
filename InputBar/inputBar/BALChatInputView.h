@@ -10,11 +10,12 @@
 #import "BALChatInputToolBar.h"
 #import "BALChatToolBarConfig.h"
 
-//@class BALChatInputToolBar;
+@class BALChatInputView;
 @class BALInputEmotionContainerView;
 @class BALInputMorePluginContainerView;
 @class BALInputShortcutTextContainerView;
-
+@class BALInputEmotionModel;
+@class BALInputPluginItemModel;
 
 
 //typedef NS_ENUM(NSUInteger, BALChatInputToolbarStyle) {
@@ -60,6 +61,19 @@ typedef NS_ENUM(NSInteger, BALChatInputViewStatus) {
 // ///////////////////////////////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////
 
+@protocol BALChatInputViewDelegate <NSObject>
+
+- (void)chatInputView:(BALChatInputView*)inputView didTriggerSendAction:(NSString*)senderText;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectEmotionImage:(BALInputEmotionModel*)emotionImage;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectPluginItem:(BALInputPluginItemModel*)pluginItem;
+
+- (void)chatInputView:(BALChatInputView*)inputView didSelectShortutText:(NSString*)shortcutText;
+
+@end
+
+
 /**
  *  聊天输入框 对外 使用视图
  */
@@ -70,10 +84,13 @@ typedef NS_ENUM(NSInteger, BALChatInputViewStatus) {
 @property(nonatomic,strong) BALInputEmotionContainerView *emotionContainerView;
 @property(nonatomic,strong) BALInputMorePluginContainerView *moreContainerView;
 @property(nonatomic,strong) BALInputShortcutTextContainerView *shortcutTextContainerView;
+@property(nonatomic,weak) id<BALChatInputViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame
                          type:(BALChatInputToolbarType)type;
 
 - (void)setChatInputConfig:(id<BALChatToolBarConfig>)config;
+
+- (void)layoutChatInputViewWithStatus:(BALChatInputViewStatus)status;
 
 @end

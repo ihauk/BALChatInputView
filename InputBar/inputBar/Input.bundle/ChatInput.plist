@@ -5,6 +5,8 @@
 	<key>PluginItemDS</key>
 	<array>
 		<dict>
+			<key>actionTag</key>
+			<integer>1011</integer>
 			<key>title</key>
 			<string>照片</string>
 			<key>highLightImage</key>
@@ -13,62 +15,8 @@
 			<string>扩展输入框_图片_normal.png</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>照片</string>
-			<key>highLightImage</key>
-			<string>扩展输入框_图片_highlight.png</string>
-			<key>normalImage</key>
-			<string>扩展输入框_图片_normal.png</string>
-		</dict>
-		<dict>
+            <key>actionTag</key>
+            <integer>1012</integer>
 			<key>title</key>
 			<string>拍照</string>
 			<key>highLightImage</key>
@@ -77,6 +25,8 @@
 			<string>扩展输入框_拍照_normal.png</string>
 		</dict>
 		<dict>
+            <key>actionTag</key>
+            <integer>1013</integer>
 			<key>title</key>
 			<string>位置</string>
 			<key>highLightImage</key>
@@ -84,6 +34,62 @@
 			<key>normalImage</key>
 			<string>扩展输入框_位置_normal.png</string>
 		</dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>照片</string>
+            <key>highLightImage</key>
+            <string>扩展输入框_图片_highlight.png</string>
+            <key>normalImage</key>
+            <string>扩展输入框_图片_normal.png</string>
+        </dict>
 	</array>
 	<key>EmotionCateDS</key>
 	<array>

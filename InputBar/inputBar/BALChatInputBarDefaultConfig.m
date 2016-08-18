@@ -27,11 +27,9 @@
     return 216.0;
 }
 
--(NSArray *)pluginMediaItems {
+- (CGFloat)topToolbarInputViewHeight{
     
-    
-    
-    return nil;
+    return 46.0;
 }
 
 @end

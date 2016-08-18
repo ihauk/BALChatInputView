@@ -33,7 +33,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    [self.view endEditing:YES];
+//    [self.view endEditing:YES];
+    [_chatInputView layoutChatInputViewWithStatus:KChatInputViewDefaultStatus];
 }
 
 

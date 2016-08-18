@@ -17,3 +17,9 @@ extern NSString* kInputEmotionDidTouchedNotification;
 -(void)setEmotionArray:(NSArray<BALInputEmotionModel *> *)emotionArray withLayout:(BALInputEmotionLayout*)layout;
 
 @end
+
+@interface BALEmojiItemCell : UICollectionViewCell
+
+@property(nonatomic,strong) UIButton *emojiBtn;
+- (void)setImage:(UIImage*)image;
+@end

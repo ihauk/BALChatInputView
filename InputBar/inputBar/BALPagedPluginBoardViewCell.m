@@ -34,9 +34,9 @@
     int i;
     //    int originX = 0;
     //    int originY = 0;
-    CGFloat originX          =  BALInput_EmojiLeftMargin;
+    CGFloat originX          =  (self.frame.size.width - layout.itemWidth*4)/5;
     CGFloat startX = originX;
-    CGFloat originY          = BALInput_EmojiTopMargin;
+    CGFloat originY          = (self.frame.size.height - layout.itemHeight*2)/3;
     CGFloat startY = originY;
     for (i = 0; i < row; i++) {
         int j;

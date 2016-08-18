@@ -60,6 +60,7 @@
     
     _recordButton = [[UIButton alloc] initWithFrame:CGRectZero];
     [_recordButton setBackgroundImage:[BALUtility chatInputImageWithNamed:@"声音_输入框_正常状态"] forState:UIControlStateNormal];
+    [_recordButton setBackgroundImage:[BALUtility chatInputImageWithNamed:@"声音_输入框_按下状态@2x"] forState:UIControlStateHighlighted];
     [_recordButton setTitle:@"按住说话" forState:UIControlStateNormal];
     [_recordButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
 //    _recordButton.backgroundColor = [UIColor purpleColor];
@@ -69,6 +70,10 @@
     _inputTextView.layer.borderColor = [UIColor grayColor].CGColor;
     _inputTextView.layer.cornerRadius = 5;
     _inputTextView.layer.masksToBounds = YES;
+    _inputTextView.font = [UIFont systemFontOfSize:15];
+    [_inputTextView setExclusiveTouch:YES];
+    _inputTextView.enablesReturnKeyAutomatically = YES;
+    _inputTextView.returnKeyType = UIReturnKeySend;
 //    _inputTextView.backgroundColor = [UIColor whiteColor];
     
     _emotionButton = [[UIButton alloc] initWithFrame:CGRectZero];
@@ -114,10 +119,12 @@
         
         if (item.integerValue == BALInputBarItemTypeTextOrVoice) {
             normalItemWidth = textItemWidth;
+            itemView.frame = CGRectMake(originX, 2, normalItemWidth, self.frame.size.height - 4*_leftRightSpace);
         }else{
             normalItemWidth = _inputItemWidth;
+            itemView.frame = CGRectMake(originX, 2, normalItemWidth, _inputItemWidth);
         }
-        itemView.frame = CGRectMake(originX, 2, normalItemWidth, _inputItemWidth);
+        
         
         CGPoint center = itemView.center;
         center.y = self.center.y;

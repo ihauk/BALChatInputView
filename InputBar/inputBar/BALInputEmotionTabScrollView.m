@@ -77,7 +77,7 @@ static const NSInteger senderWidth = 60;
     }
     
     [self setupEmotionCates:cateArray];
-    
+    [self didBottomTabItemTouchedAction:(UIButton*)self.tabViewArray.firstObject];
 }
 
 - (void)setupEmotionCates:(NSArray<BALInputEmotionCateModel*>*)cateArray {

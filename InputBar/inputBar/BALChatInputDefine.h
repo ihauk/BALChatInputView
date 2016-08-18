@@ -9,6 +9,8 @@
 #ifndef BALChatInputDefine_h
 #define BALChatInputDefine_h
 
+#define isAboveIOS8            ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0)
+
 // 主题色
 
 #define BALInput_AllBoardBKColor  [UIColor whiteColor]
@@ -57,5 +59,13 @@ typedef NS_ENUM(NSInteger,BALChatInputBarItemType){
     BALInputBarItemTypeEmoticon,      //表情贴图
     BALInputBarItemTypeMore,          //更多菜单
 };
+
+
+
+#ifdef DEBUG
+#define DebugLog( s, ... ) NSLog( @"[%@:(%d)] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DebugLog( s, ... )
+#endif
 
 #endif /* BALChatInputDefine_h */

@@ -31,6 +31,7 @@
     item.image = [BALUtility pluginImageWithNamed:configDic[@"normalImage"]];
     item.highlightImage = [BALUtility pluginImageWithNamed:configDic[@"highlightImage"]];
     item.title = configDic[@"title"];
+    item.actionTag = configDic[@"actionTag"];
     
     return item;
 }

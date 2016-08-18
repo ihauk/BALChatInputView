@@ -8,6 +8,8 @@
 
 #import "BALShortcutTextListView.h"
 
+NSString *kInputShortcutTextDidTouchedNotification = @"kInputShortcutTextDidTouchedNotification_BAL";
+
 @implementation BALShortcutTextListView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -56,10 +58,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *text = [self.shortcutTextArray objectAtIndex:indexPath.row];
-    if ([self.shortcutDelegate respondsToSelector:@selector(shortcutTextListView:didSelectAtIndex:text:)]) {
-        
-        [self.shortcutDelegate shortcutTextListView:self didSelectAtIndex:indexPath.row text:text];
-    }
+//    if ([self.shortcutDelegate respondsToSelector:@selector(shortcutTextListView:didSelectAtIndex:text:)]) {
+//        
+//        [self.shortcutDelegate shortcutTextListView:self didSelectAtIndex:indexPath.row text:text];
+//    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kInputShortcutTextDidTouchedNotification object:text];
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
