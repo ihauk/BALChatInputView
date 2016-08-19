@@ -37,6 +37,9 @@
         [self setupChatInputToolbarWithType:type];
         self.inputItemWidth = 32;
         self.leftRightSpace = 4;
+        
+        self.layer.borderColor = [UIColor grayColor].CGColor;
+        self.layer.borderWidth = 0.5;
     }
     
     return self;
@@ -221,7 +224,7 @@
         lable.layer.borderColor = [UIColor grayColor].CGColor;
         [lable setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [lable addTarget:self action:@selector(onMenuPushed:) forControlEvents:UIControlEventTouchUpInside];
-        lable.backgroundColor = [UIColor whiteColor];
+        lable.backgroundColor = BALInput_ChatToolBarBKColor;
         [self.menuContainerView addSubview:lable];
     }
 }

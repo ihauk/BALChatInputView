@@ -55,6 +55,9 @@ static const NSInteger senderWidth = 60;
     
     [self addSubview:_emotioncateScrollView];
     [self addSubview:_sendButton];
+    
+    self.layer.borderColor = [UIColor grayColor].CGColor;
+    self.layer.borderWidth = 0.5;
 }
 
 - (void)layoutSubviews {

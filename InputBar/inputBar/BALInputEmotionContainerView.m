@@ -9,6 +9,7 @@
 #import "BALInputEmotionContainerView.h"
 #import "BALInputEmotionTabScrollView.h"
 #import "BALPagedScrollView.h"
+#import "BALChatInputDefine.h"
 
 static const NSInteger kBottomCateTabHeight = 40;
 
@@ -93,9 +94,9 @@ static const NSInteger kBottomCateTabHeight = 40;
         cateModel.iconName = [emotionPath stringByAppendingPathComponent:emotionDic[@"info"][@"normal"] ];
         cateModel.highlightIconName = [emotionPath stringByAppendingPathComponent:emotionDic[@"info"][@"pressed"]];
         if (emotionDic[@"info"][@"isEmoji"]) {
-            cateModel.layout = [[BALInputEmotionLayout alloc] initEmojiLayout:self.frame.size.width];
+            cateModel.layout = [[BALInputEmotionLayout alloc] initEmojiLayout:self.frame.size.width- BALInput_EmojiLeftMargin*2];
         } else {
-            cateModel.layout = [[BALInputEmotionLayout alloc] initCharletLayout:self.frame.size.width];
+            cateModel.layout = [[BALInputEmotionLayout alloc] initCharletLayout:self.frame.size.width-BALInput_EmojiLeftMargin*2];
         }
         cateModel.emotionsArray = [NSMutableArray array];
         

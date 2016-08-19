@@ -15,7 +15,7 @@
 
 #define BALInput_ChatToolBarBKColor  RGBCOLOR(236,236,236)
 #define BALInput_AllBoardBKColor  [UIColor whiteColor]
-#define BALInput_EmotionCateTabBKCOLor  [UIColor grayColor]
+#define BALInput_EmotionCateTabBKCOLor  [UIColor whiteColor]
 #define BALInput_EmotionSendBtnBKCOLor  [UIColor blueColor]
 
 

@@ -105,7 +105,10 @@ static NSString *PagePluginBoardViewIdentifier = @"BAL_PageViewIdentifier_Plugin
         NSRange range = NSMakeRange(origin, len);
         NSLog(@"----- %lu,%lu",(unsigned long)range.location,(unsigned long)range.length);
         NSMutableArray *tmpDs = [[emotionCateModel.emotionsArray subarrayWithRange:range] mutableCopy];
-        [tmpDs addObject:[BALInputEmotionModel deleteEmotionModel]];
+        if (_emotionCateModel.layout.emoji) {
+            
+            [tmpDs addObject:[BALInputEmotionModel deleteEmotionModel]];
+        }
         [_dataSource addObject:tmpDs];
     }
     
