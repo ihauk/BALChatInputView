@@ -2,6 +2,44 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>PubMenus</key>
+	<dict>
+		<key>menu</key>
+		<array>
+			<dict>
+				<key>menu</key>
+				<array>
+					<dict>
+						<key>url</key>
+						<string></string>
+						<key>title</key>
+						<string>驾车</string>
+					</dict>
+				</array>
+				<key>title</key>
+				<string>出行</string>
+			</dict>
+			<dict>
+				<key>menu</key>
+				<array>
+					<dict>
+						<key>url</key>
+						<string></string>
+						<key>title</key>
+						<string>喝水</string>
+					</dict>
+					<dict>
+						<key>url</key>
+						<string></string>
+						<key>title</key>
+						<string>吃饭</string>
+					</dict>
+				</array>
+				<key>title</key>
+				<string>饮食</string>
+			</dict>
+		</array>
+	</dict>
 	<key>PluginItemDS</key>
 	<array>
 		<dict>
@@ -15,8 +53,8 @@
 			<string>扩展输入框_图片_normal.png</string>
 		</dict>
 		<dict>
-            <key>actionTag</key>
-            <integer>1012</integer>
+			<key>actionTag</key>
+			<integer>1012</integer>
 			<key>title</key>
 			<string>拍照</string>
 			<key>highLightImage</key>
@@ -25,8 +63,8 @@
 			<string>扩展输入框_拍照_normal.png</string>
 		</dict>
 		<dict>
-            <key>actionTag</key>
-            <integer>1013</integer>
+			<key>actionTag</key>
+			<integer>1013</integer>
 			<key>title</key>
 			<string>位置</string>
 			<key>highLightImage</key>
@@ -34,62 +72,62 @@
 			<key>normalImage</key>
 			<string>扩展输入框_位置_normal.png</string>
 		</dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>照片</string>
-            <key>highLightImage</key>
-            <string>扩展输入框_图片_highlight.png</string>
-            <key>normalImage</key>
-            <string>扩展输入框_图片_normal.png</string>
-        </dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>照片</string>
+			<key>highLightImage</key>
+			<string>扩展输入框_图片_highlight.png</string>
+			<key>normalImage</key>
+			<string>扩展输入框_图片_normal.png</string>
+		</dict>
 	</array>
 	<key>EmotionCateDS</key>
 	<array>

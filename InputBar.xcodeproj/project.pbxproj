@@ -33,6 +33,10 @@
 		36C5B8CE1D645E4E00D83352 /* BALEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8CD1D645E4E00D83352 /* BALEmotionManager.m */; };
 		36C5B8D31D655A2700D83352 /* GmacsVoiceCaptureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8D01D655A2700D83352 /* GmacsVoiceCaptureControl.m */; };
 		36C5B8D41D655A2700D83352 /* GmacsVoiceRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8D21D655A2700D83352 /* GmacsVoiceRecorder.m */; };
+		36C5B8DC1D65FAEA00D83352 /* GmacsPublicServiceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8D71D65FAEA00D83352 /* GmacsPublicServiceMenu.m */; };
+		36C5B8DD1D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8D91D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.m */; };
+		36C5B8DE1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8DB1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.m */; };
+		36C5B8E11D66063800D83352 /* GmacsPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C5B8E01D66063800D83352 /* GmacsPopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,14 @@
 		36C5B8D01D655A2700D83352 /* GmacsVoiceCaptureControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsVoiceCaptureControl.m; sourceTree = "<group>"; };
 		36C5B8D11D655A2700D83352 /* GmacsVoiceRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmacsVoiceRecorder.h; sourceTree = "<group>"; };
 		36C5B8D21D655A2700D83352 /* GmacsVoiceRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsVoiceRecorder.m; sourceTree = "<group>"; };
+		36C5B8D61D65FAEA00D83352 /* GmacsPublicServiceMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmacsPublicServiceMenu.h; sourceTree = "<group>"; };
+		36C5B8D71D65FAEA00D83352 /* GmacsPublicServiceMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsPublicServiceMenu.m; sourceTree = "<group>"; };
+		36C5B8D81D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmacsPublicServiceMenuGroup.h; sourceTree = "<group>"; };
+		36C5B8D91D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsPublicServiceMenuGroup.m; sourceTree = "<group>"; };
+		36C5B8DA1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmacsPublicServiceMenuItem.h; sourceTree = "<group>"; };
+		36C5B8DB1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsPublicServiceMenuItem.m; sourceTree = "<group>"; };
+		36C5B8DF1D66063800D83352 /* GmacsPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmacsPopover.h; sourceTree = "<group>"; };
+		36C5B8E01D66063800D83352 /* GmacsPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmacsPopover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,7 @@
 		369A15A01D1282920044BB03 /* inputBar */ = {
 			isa = PBXGroup;
 			children = (
+				36C5B8D51D65FADC00D83352 /* pub */,
 				36C5B8C51D645BA100D83352 /* Audio */,
 				36B885831D2A48C200A502DF /* BALShortcutTextListView.h */,
 				36B885841D2A48C200A502DF /* BALShortcutTextListView.m */,
@@ -195,6 +208,21 @@
 				36C5B8D21D655A2700D83352 /* GmacsVoiceRecorder.m */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		36C5B8D51D65FADC00D83352 /* pub */ = {
+			isa = PBXGroup;
+			children = (
+				36C5B8DF1D66063800D83352 /* GmacsPopover.h */,
+				36C5B8E01D66063800D83352 /* GmacsPopover.m */,
+				36C5B8D61D65FAEA00D83352 /* GmacsPublicServiceMenu.h */,
+				36C5B8D71D65FAEA00D83352 /* GmacsPublicServiceMenu.m */,
+				36C5B8D81D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.h */,
+				36C5B8D91D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.m */,
+				36C5B8DA1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.h */,
+				36C5B8DB1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.m */,
+			);
+			name = pub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,14 +309,18 @@
 				369A15AC1D128CF90044BB03 /* BALChatInputToolBar.m in Sources */,
 				365048BE1D27C63100A96F1E /* BALUtility.m in Sources */,
 				369A158B1D1282800044BB03 /* main.m in Sources */,
+				36C5B8DE1D65FAEA00D83352 /* GmacsPublicServiceMenuItem.m in Sources */,
+				36C5B8E11D66063800D83352 /* GmacsPopover.m in Sources */,
 				36C5B8D41D655A2700D83352 /* GmacsVoiceRecorder.m in Sources */,
 				36C5B8CE1D645E4E00D83352 /* BALEmotionManager.m in Sources */,
 				365048B91D276AA200A96F1E /* BALClassManager.m in Sources */,
 				36BBDDAF1D3765EF004ECE7F /* BALInputEmotionCateModel.m in Sources */,
 				36BBDDB21D38C372004ECE7F /* BALPagedScrollView.m in Sources */,
+				36C5B8DC1D65FAEA00D83352 /* GmacsPublicServiceMenu.m in Sources */,
 				36B885821D290EA800A502DF /* BALInputShortcutTextContainerView.m in Sources */,
 				369A15A31D12869A0044BB03 /* BALInputEmotionTabScrollView.m in Sources */,
 				369A15A91D128C3A0044BB03 /* BALInputMorePluginContainerView.m in Sources */,
+				36C5B8DD1D65FAEA00D83352 /* GmacsPublicServiceMenuGroup.m in Sources */,
 				3609658B1D190F3E00CBC83A /* BALChatInputView.m in Sources */,
 				36BBDDB51D38CB6C004ECE7F /* BALPagedChatFaceViewCell.m in Sources */,
 			);

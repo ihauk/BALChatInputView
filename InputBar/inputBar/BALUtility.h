@@ -22,6 +22,7 @@
 
 +(UIImage*)imageNamed:(NSString*)name ofBundle:(NSString*)bundleName;
 
-+ (NSString *)inputBundlePath;
++(NSString *)inputBundlePath;
+
 
 @end

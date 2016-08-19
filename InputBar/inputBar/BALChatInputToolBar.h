@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BALChatInputDefine.h"
 #import "BALChatToolBarConfig.h"
+#import "GmacsPublicServiceMenu.h"
 
 
 
@@ -36,4 +37,5 @@
 - (void)setupChatInputToolbarWithType:(BALChatInputToolbarType)type ;
 
 - (void)setCharInputBarItemTypes:(NSArray<NSNumber *> *)types;
+- (void)setPublicServiceMenus:(GmacsPublicServiceMenu*)pubmenu;
 @end

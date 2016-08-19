@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BALChatInputToolBar.h"
 #import "BALChatToolBarConfig.h"
+#import "GmacsPublicServiceMenu.h"
 
 @class BALChatInputView;
 @class BALInputEmotionContainerView;
@@ -105,5 +106,7 @@ typedef NS_ENUM(NSInteger, BALChatInputViewStatus) {
 - (void)setChatInputConfig:(id<BALChatToolBarConfig>)config;
 
 - (void)layoutChatInputViewWithStatus:(BALChatInputViewStatus)status;
+
+- (void)configPublicServiceMenu:(GmacsPublicServiceMenu*)pubMenu;
 
 @end

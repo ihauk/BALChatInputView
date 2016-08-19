@@ -689,4 +689,8 @@
     }
 }
 
+- (void)configPublicServiceMenu:(GmacsPublicServiceMenu *)pubMenu {
+    [_inputToolBar setPublicServiceMenus:pubMenu];
+}
+
 @end

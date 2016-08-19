@@ -13,6 +13,7 @@
 
 // 主题色
 
+#define BALInput_ChatToolBarBKColor  RGBCOLOR(236,236,236)
 #define BALInput_AllBoardBKColor  [UIColor whiteColor]
 #define BALInput_EmotionCateTabBKCOLor  [UIColor grayColor]
 #define BALInput_EmotionSendBtnBKCOLor  [UIColor blueColor]
@@ -60,6 +61,10 @@ typedef NS_ENUM(NSInteger,BALChatInputBarItemType){
     BALInputBarItemTypeMore,          //更多菜单
 };
 
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define HEXCOLOR(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
 #ifdef DEBUG

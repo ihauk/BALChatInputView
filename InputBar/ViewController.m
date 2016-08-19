@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "BALChatInputView.h"
 #import "BALInputEmotionCateModel.h"
+#import "GmacsPublicServiceMenu.h"
 
 @interface ViewController ()<BALChatInputViewDelegate>
 
@@ -21,9 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _chatInputView = [[BALChatInputView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-49, CGRectGetMaxX(self.view.frame), 49) type:BALChatInputToolbarDefaultType];
+    _chatInputView = [[BALChatInputView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-49, CGRectGetMaxX(self.view.frame), 49) type:BALChatInputToolbarPubType];
     _chatInputView.delegate = self;
     [self.view addSubview:_chatInputView];
+    GmacsPublicServiceMenu *pubMenu = [[GmacsPublicServiceMenu alloc] initWithMenuDic:[self getPubMenus]];
+    [_chatInputView configPublicServiceMenu:pubMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +40,18 @@
 //    [self.view endEditing:YES];
     [_chatInputView layoutChatInputViewWithStatus:KChatInputViewDefaultStatus];
 }
+
+#pragma mark -
+#pragma mark - pubmenu
+
+-(NSDictionary *)getPubMenus {
+    NSString *path = [[[[NSBundle mainBundle] resourcePath]stringByAppendingPathComponent:@"Input.bundle"] stringByAppendingPathComponent:@"ChatInput.plist"];
+    NSDictionary *configDic = [[NSDictionary alloc]initWithContentsOfFile:path];
+    NSDictionary *pubmenus = [configDic objectForKey:@"PubMenus"];
+    
+    return pubmenus;
+}
+
 
 #pragma mark -
 #pragma mark - delegate 
