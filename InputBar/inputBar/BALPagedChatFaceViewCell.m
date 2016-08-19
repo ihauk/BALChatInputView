@@ -76,7 +76,7 @@ NSString *kInputEmotionDidTouchedNotification = @"kInputEmotionDidTouchedNotific
     if (!self.collectionView.superview) {
         [self addSubview:self.collectionView];
     }
-    [self resetCollectionViewLayout:_layout.emoji];
+    [self resetCollectionViewLayout];
     [self.collectionView reloadData];
 }
 
@@ -137,9 +137,9 @@ NSString *kInputEmotionDidTouchedNotification = @"kInputEmotionDidTouchedNotific
     return _collectionView;
 }
 
-- (void)resetCollectionViewLayout:(BOOL)isEmoji{
+- (void)resetCollectionViewLayout{
     
-    int columeCount = isEmoji ? 8 : 4;
+    int columeCount =  _layout.columes;
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     CGFloat itemWidth = (self.frame.size.width- BALInput_EmojiTopMargin*2 - _layout.cellWidth *columeCount)/(columeCount+1);

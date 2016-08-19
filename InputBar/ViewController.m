@@ -93,4 +93,37 @@
     NSLog(@"取消录音");
 }
 
+#pragma mark -
+#pragma mark - 旋转
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    NSLog(@"willRotateToInterfaceOrientation");
+    int width = 0;
+    int orignY =0;
+    switch (toInterfaceOrientation) {
+        case UIInterfaceOrientationLandscapeRight:
+        case UIInterfaceOrientationPortraitUpsideDown:
+        {
+            width = CGRectGetMaxX(self.view.frame);
+            orignY = self.view.bounds.size.height-49;
+        }
+            break;
+            
+        default:
+        {
+            width = CGRectGetMaxY(self.view.frame);
+            orignY = self.view.bounds.size.width-49;
+        }
+            break;
+    }
+    
+    _chatInputView.frame = CGRectMake(0, orignY, width, 49);
+}
+
+//-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+//    NSLog(@"viewWillTransitionToSize");
+//}
+
+
+
 @end
